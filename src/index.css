@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+[data-amplify-authenticator] {
+	--amplify-components-button-primary-background-color: oklch(var(--p));
+	--amplify-components-tabs-item-active-border-color: oklch(var(--a));
+	--amplify-components-button-primary-hover-background-color: oklch(var(--a));
+}

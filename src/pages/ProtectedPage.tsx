@@ -1,5 +1,10 @@
+import { useLoaderData } from 'react-router-dom'
+
 const ProtectedPage = () => {
-	return <div>Protected</div>
+	const { tenantName } = useLoaderData() as { tenantName: string }
+
+	console.log('ProtectedLayout data for tenant', tenantName)
+	return <div>Hello, {tenantName}</div>
 }
 
 export default ProtectedPage

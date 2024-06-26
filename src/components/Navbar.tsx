@@ -12,13 +12,13 @@ const Navbar = () => {
 			</div>
 			<div className="flex-none">
 				<ul className="menu menu-horizontal px-1">
-					<li>
-						<Link to="/protected">Protected</Link>
-					</li>
-
-					{user && (
+					{user ? (
 						<li>
-							<button onClick={signOut}>Sign Out</button>
+							<button onClick={signOut}>Log out</button>
+						</li>
+					) : (
+						<li>
+							<Link to="/login">Log in</Link>
 						</li>
 					)}
 				</ul>

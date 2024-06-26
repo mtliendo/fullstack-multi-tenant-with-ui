@@ -10,7 +10,7 @@ const Hero = () => {
 						I'm a pretty basic hero element. That's ok. We all start somewhere!
 						Hopefully you end up building something amazing 🦦
 					</p>
-					<Link to="/protected" className="btn btn-primary">
+					<Link to="/login" className="btn btn-primary">
 						Get Started
 					</Link>
 				</div>
