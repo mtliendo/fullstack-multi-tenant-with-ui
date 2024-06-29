@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^6.1.12",
+    "@aws-sdk/util-dynamodb": "^3.606.0",
     "aws-amplify": "^6.3.6",
+    "install": "^0.13.0",
+    "npm": "^10.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1"
@@ -19,6 +22,9 @@
   "devDependencies": {
     "@aws-amplify/backend": "^1.0.3",
     "@aws-amplify/backend-cli": "^1.0.4",
+    "@aws-appsync/utils": "^1.8.0",
+    "@aws-sdk/client-cognito-identity-provider": "^3.606.0",
+    "@types/aws-lambda": "^8.10.140",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
