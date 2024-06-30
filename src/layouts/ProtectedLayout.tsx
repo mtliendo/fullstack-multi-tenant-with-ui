@@ -1,4 +1,9 @@
 import { Authenticator, Input, Label } from '@aws-amplify/ui-react'
+import { I18n } from 'aws-amplify/utils'
+
+I18n.putVocabulariesForLanguage('en', {
+	'Create Account': 'Register New Tenant',
+})
 
 import { Outlet } from 'react-router-dom'
 
