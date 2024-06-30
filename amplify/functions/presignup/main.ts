@@ -26,9 +26,13 @@ async function getItem(key: string, tableName: string) {
 }
 
 export const handler: PreSignUpTriggerHandler = async (event) => {
+	console.log('the event', event)
 	console.log('the attrs', event.request.userAttributes)
 	const submittedTenantName = event.request.userAttributes['custom:tenantName']
 
+	if (event.request.clientMetadata?.registeredByAdmin) {
+		return event
+	}
 	const fetchedItem = await getItem(
 		submittedTenantName,
 		process.env.TENANT_TABLE_NAME!

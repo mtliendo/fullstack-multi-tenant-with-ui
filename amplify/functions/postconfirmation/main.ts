@@ -22,6 +22,7 @@ const addAdminToGroup = async (
 	await cognitoClient.send(command)
 }
 export const handler: PostConfirmationTriggerHandler = async (event) => {
+	console.log('event', event)
 	const tenantName = event.request.userAttributes['custom:tenantName']
 	const now = new Date().toISOString()
 	const { userName, userPoolId } = event

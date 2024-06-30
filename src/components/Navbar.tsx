@@ -1,8 +1,9 @@
 import { useAuthenticator } from '@aws-amplify/ui-react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 	const { user, signOut } = useAuthenticator((context) => [context.user])
+	const navigate = useNavigate()
 	return (
 		<div className="navbar bg-primary text-primary-content">
 			<div className="flex-1">
@@ -14,7 +15,14 @@ const Navbar = () => {
 				<ul className="menu menu-horizontal px-1">
 					{user ? (
 						<li>
-							<button onClick={signOut}>Log out</button>
+							<button
+								onClick={() => {
+									signOut()
+									navigate('/')
+								}}
+							>
+								Log out
+							</button>
 						</li>
 					) : (
 						<li>
