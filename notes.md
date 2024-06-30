@@ -330,8 +330,10 @@ I18n.putVocabulariesForLanguage('en', {
 })
 ```
 
-## Moving Beyond: Creating the UI
+## Moving Beyond: ~Creating the UI~
 
 I now having a working sample that allows users to signup with an available tenant name, and become an admin of the newly created tenant.
 
 Next steps are to create the UI for this thing and deploy it to the masses!
+
+On second thought....I have to add subscriptions and get images working...
