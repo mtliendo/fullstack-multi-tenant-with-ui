@@ -318,6 +318,17 @@ Note that even after the deploy, the GSI wasn't done. So my query still returned
 - As a DIFFERENT admin, I can create a user for my tenant
 - As a DIFFERENT USER IN A TENANT, I can list todos only for my tenant
 
+I wanted to distinguish between signing in and creating a new tenant, so I updated the tab bar:
+
+```ts
+import { Authenticator, Input, Label } from '@aws-amplify/ui-react'
+import { I18n } from 'aws-amplify/utils'
+
+I18n.putVocabulariesForLanguage('en', {
+	'Create Account': 'Register New Tenant',
+})
+```
+
 ## Moving Beyond: Creating the UI
 
 I now having a working sample that allows users to signup with an available tenant name, and become an admin of the newly created tenant.
