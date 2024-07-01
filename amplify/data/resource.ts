@@ -2,9 +2,9 @@ import { type ClientSchema, a, defineData } from '@aws-amplify/backend'
 
 const schema = a.schema({
 	TodoResponse: a.customType({
-		id: a.id(),
-		createdAt: a.datetime(),
-		updatedAt: a.datetime(),
+		id: a.id().required(),
+		createdAt: a.datetime().required(),
+		updatedAt: a.datetime().required(),
 		name: a.string().required(),
 		completed: a.boolean().required(),
 	}),

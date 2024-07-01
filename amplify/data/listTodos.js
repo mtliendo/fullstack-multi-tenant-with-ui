@@ -2,12 +2,14 @@ import * as ddb from '@aws-appsync/utils/dynamodb'
 
 // list only your tenant todos
 export function request(ctx) {
+	console.log('args', ctx.args)
+	console.log('identity', ctx.identity)
 	const tenantName = ctx.identity.claims['custom:tenantName']
-
+	console.log('request', tenantName)
 	return ddb.query({
 		query: { tenantId: { eq: tenantName } },
 		index: 'byTenantName',
-		limit: ctx.args.limit,
+		limit: ctx.args.limit || 50,
 		nextToken: ctx.args.nextToken,
 	})
 }
