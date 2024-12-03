@@ -29,6 +29,10 @@ const schema = a.schema({
 		.returns(a.ref('TodoResponse'))
 		.handler([
 			a.handler.custom({
+				entry: './adminGetUser.js',
+				dataSource: 'cognitoDS',
+			}),
+			a.handler.custom({
 				entry: './createTodo.js',
 				dataSource: 'tenantTodoTableDS',
 			}),
@@ -68,6 +72,10 @@ const schema = a.schema({
 		})
 		.returns(a.ref('ListTodosResponse'))
 		.handler([
+			a.handler.custom({
+				entry: './adminGetUser.js',
+				dataSource: 'cognitoDS',
+			}),
 			a.handler.custom({
 				entry: './listTodos.js',
 				dataSource: 'tenantTodoTableDS',

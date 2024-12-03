@@ -1,4 +1,4 @@
-import { Form, redirect, useLoaderData } from 'react-router-dom'
+import { Form, Link, redirect, useLoaderData } from 'react-router-dom'
 import { Schema } from '../../amplify/data/resource'
 import { fetchUserAttributes } from 'aws-amplify/auth'
 import { generateClient } from 'aws-amplify/api'
@@ -84,7 +84,9 @@ const TodosPage = () => {
 								return (
 									<tr key={todo?.id}>
 										<th>{index + 1}</th>
-										<td>{todo?.name}</td>
+										<td>
+											<Link to={`create?todoId=${todo?.id}`}>{todo?.name}</Link>
+										</td>
 										<td>{todo?.completed ? 'Yes' : 'No'}</td>
 										<td>{todo?.createdAt}</td>
 									</tr>

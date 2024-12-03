@@ -4,7 +4,7 @@ import * as ddb from '@aws-appsync/utils/dynamodb'
 export function request(ctx) {
 	console.log('args', ctx.args)
 	console.log('identity', ctx.identity)
-	const tenantName = ctx.identity.claims['custom:tenantName']
+	const tenantName = ctx.prev.result.tenantName
 	console.log('request', tenantName)
 	return ddb.query({
 		query: { tenantId: { eq: tenantName } },

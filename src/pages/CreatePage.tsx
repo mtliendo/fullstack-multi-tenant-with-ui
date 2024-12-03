@@ -16,7 +16,7 @@ const CreatePage = () => {
 	console.log('the todo', todo)
 	return (
 		<Form method="POST">
-			<input name="name" required />
+			<input name="todoName" required />
 			<button type="submit">Create</button>
 		</Form>
 	)

@@ -62,7 +62,11 @@ const cognitoDS = backend.data.addHttpDataSource(
 //allow the datasource to call the createAdminUser operation
 cognitoDS.grantPrincipal.addToPrincipalPolicy(
 	new PolicyStatement({
-		actions: ['cognito-idp:AdminCreateUser', 'cognito-idp:AdminAddUserToGroup'],
+		actions: [
+			'cognito-idp:AdminCreateUser',
+			'cognito-idp:AdminAddUserToGroup',
+			'cognito-idp:AdminGetUser',
+		],
 		resources: [backend.auth.resources.userPool.userPoolArn],
 	})
 )
