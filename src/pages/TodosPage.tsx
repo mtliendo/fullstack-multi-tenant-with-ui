@@ -8,7 +8,7 @@ const client = generateClient<Schema>()
 export const loader = async ({ request }: { request: Request }) => {
 	let attrs
 	const url = new URL(request.url)
-	const tenantNameInURL = url.pathname.split('/')[1]
+	const tenantNameInURL = decodeURI(url.pathname.split('/')[1])
 	console.log('tenantNameInURL', tenantNameInURL)
 	try {
 		attrs = await fetchUserAttributes()
